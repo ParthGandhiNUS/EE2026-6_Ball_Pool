@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Apr  6 19:16:05 2024
+# Process ID: 18056
+# Current directory: C:/Users/Yi Xin/Downloads/tosend.xpr/grp_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8144 C:\Users\Yi Xin\Downloads\tosend.xpr\grp_project\grp_project.xpr
+# Log file: C:/Users/Yi Xin/Downloads/tosend.xpr/grp_project/vivado.log
+# Journal file: C:/Users/Yi Xin/Downloads/tosend.xpr/grp_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Yi Xin/Downloads/tosend.xpr/grp_project/grp_project.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+open_hw
+archive_project {C:/Users/Yi Xin/Downloads/tosend.xpr/final.xpr.zip} -temp_dir {C:/Users/Yi Xin/Downloads/tosend.xpr/grp_project/.Xil/Vivado-18056-DESKTOP-NGQ902H} -force -include_local_ip_cache -include_config_settings

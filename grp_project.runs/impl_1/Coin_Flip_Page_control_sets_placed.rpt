@@ -1,0 +1,531 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Apr  6 19:22:18 2024
+| Host         : DESKTOP-NGQ902H running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Coin_Flip_Page_control_sets_placed.rpt
+| Design       : Coin_Flip_Page
+| Device       : xc7a35t
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |   462 |
+| Unused register locations in slices containing registers |   862 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            7 |
+|      4 |            2 |
+|      8 |            9 |
+|     10 |            4 |
+|     14 |          333 |
+|    16+ |          107 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            1426 |          367 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |            3700 |          515 |
+| Yes          | No                    | No                     |            4426 |          802 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             410 |           84 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|             Clock Signal             |                        Enable Signal                        |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++--------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|  SLOW_CLOCK                          | intra_uart_module/transmit_intra/JA_i_2_n_0                 | intra_uart_module/transmit_intra/JA0_out                    |                1 |              2 |
+|  mouse_x_rx_final/clocker_625khz/CLK |                                                             |                                                             |                1 |              2 |
+|  mouse_x_rx_final/clocker_625khz/CLK | mouse_x_rx_final/Rx_Counter1                                | mouse_x_rx_final/Rx_Counter12_out                           |                1 |              2 |
+| ~clock_6p25Mhz_BUFG                  |                                                             |                                                             |                1 |              2 |
+|  mouse_y_rx_final/clocker_625khz/CLK |                                                             |                                                             |                1 |              2 |
+|  mouse_y_rx_final/clocker_625khz/CLK | mouse_y_rx_final/Rx_Counter1                                | mouse_y_rx_final/Rx_Counter12_out                           |                1 |              2 |
+|  SLOW_CLOCK                          |                                                             |                                                             |                1 |              2 |
+|  mouse_y_tx_final/clocker_625khz/CLK | mouse_y_tx_final/JA_i_2__0_n_0                              | mouse_y_tx_final/JA3_out                                    |                1 |              4 |
+|  mouse_x_tx_final/clocker_625khz/CLK | mouse_x_tx_final/JA_i_2__1_n_0                              | mouse_x_tx_final/JA3_out                                    |                1 |              4 |
+|  mouse_y_tx_final/clocker_625khz/CLK |                                                             |                                                             |                2 |              8 |
+|  mouse_x_tx_final/clocker_625khz/CLK |                                                             |                                                             |                1 |              8 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/shift_frame                  | Master_Mouse/Inst_Ps2Interface/reset_bit_count              |                2 |              8 |
+|  clk_IBUF_BUFG                       |                                                             | Coin_Page_Oled/pixel_data_reg[12]_10                        |                2 |              8 |
+|  mouse_x_rx_final/clocker_625khz/CLK | mouse_x_rx_final/Rx_Counter[4]_i_2_n_0                      | mouse_x_rx_final/Rx_Counter[4]                              |                2 |              8 |
+|  clk_IBUF_BUFG                       |                                                             | sw_IBUF[15]                                                 |                4 |              8 |
+|  mouse_y_rx_final/clocker_625khz/CLK | mouse_y_rx_final/Rx_Counter[4]_i_2__0_n_0                   | mouse_y_rx_final/Rx_Counter[4]                              |                1 |              8 |
+|  clk_IBUF_BUFG                       |                                                             | Master_Mouse/Inst_Ps2Interface/clk_inter0                   |                1 |              8 |
+|  clk_IBUF_BUFG                       |                                                             | Master_Mouse/Inst_Ps2Interface/data_inter0                  |                1 |              8 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/left_down_reg                |                                                             |                2 |             10 |
+|  clk_IBUF_BUFG                       |                                                             | Coin_Page_Oled/pixel_data_reg[9]_55                         |                2 |             10 |
+|  movementClk_BUFG                    | ballhandlr/game/prevScore[4]_i_1_n_0                        | sw_IBUF[15]                                                 |                1 |             10 |
+|  clk_IBUF_BUFG                       | ballhandlr/whiteBall/newYPosWhite_reg[0]_0                  |                                                             |                3 |             10 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[49][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[50][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[45][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[4][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[56][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[3][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[52][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[36][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[44][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[76][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[67][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[60][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[74][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[63][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[5][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[77][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[62][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[6][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[70][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[72][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[66][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[68][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/xSpeed[6]_i_1__0_n_0                      |                                                             |                4 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[64][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/ySpeed[6]_i_1__0_n_0                      |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[59][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[69][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[80][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/xSpeed[6]_i_1_n_0                         |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[7][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/ySpeed[6]_i_1_n_0                         |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[65][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[78][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[81][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/xSpeed[6]_i_1__3_n_0                     |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[79][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/ySpeed[6]_i_1__3_n_0                     |                                                             |                4 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[61][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[73][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[75][6]_i_1_n_0                 |                                                             |                3 |             14 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/xSpeed[6]_i_1__1_n_0                     |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[71][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/ySpeed[6]_i_1__1_n_0                     |                                                             |                4 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[83][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[88][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[38][6]_i_1_n_0                     |                2 |             14 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/xSpeed[6]_i_1__4_n_0                   |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[86][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/ySpeed[6]_i_1__4_n_0                   |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[87][6]_i_1_n_0                 |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[92][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[89][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/xSpeed[6]_i_1__2_n_0                   |                                                             |                4 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[9][6]_i_1_n_0                  |                                                             |                3 |             14 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/ySpeed[6]_i_1__2_n_0                   |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[8][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[91][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[90][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[84][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[93][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[82][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/shootW/newXSpeed[6]_i_1_n_0                      |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/shootW/newYSpeed[6]_i_1_n_0                      |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[85][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[0][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[19][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[1][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[21][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[20][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[17][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[22][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[15][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[16][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[11][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[13][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[10][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[12][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[18][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[14][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[34][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[23][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[2][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[35][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[30][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[39][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[27][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[37][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[3][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[40][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[41][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[24][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[31][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[29][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[33][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[26][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[25][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[28][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[36][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[32][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[44][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[57][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[45][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[47][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[51][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[42][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[52][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[48][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[50][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[4][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[53][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[54][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[43][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[46][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[49][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[55][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[56][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[7][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[9][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[59][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[8][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[63][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[61][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[5][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[58][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[60][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[62][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/x_if_y_is[6][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[22][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[24][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[17][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[27][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[25][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[28][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[2][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[15][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[30][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[10][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[18][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[19][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[12][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[13][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[0][6]_i_1_n_0                      |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[14][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[20][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[1][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[21][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[23][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[26][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[29][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[16][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[11][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[45][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[46][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[37][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[31][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[40][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[43][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[35][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[47][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[48][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[49][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[36][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[39][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[33][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[34][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[41][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[32][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[38][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[42][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[44][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[3][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[54][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[57][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[5][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[67][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[4][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[62][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[68][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[69][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[56][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[60][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[51][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[52][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[61][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[59][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[58][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[50][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[64][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[65][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[66][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[55][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[63][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[53][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[70][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[71][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[79][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[78][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[84][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[73][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[77][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[7][6]_i_1_n_0                      |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[80][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[75][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[6][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[81][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[82][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[83][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[72][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[76][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[74][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[9][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[93][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[85][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[87][6]_i_1_n_0                     |                3 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[88][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[86][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[8][6]_i_1_n_0                      |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[90][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[91][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[92][6]_i_1_n_0                     |                1 |             14 |
+|  clk_IBUF_BUFG                       |                                                             | ballhandlr/dsp/y_if_x_is[89][6]_i_1_n_0                     |                2 |             14 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/delay_63clk_count[6]_i_2_n_0 | Master_Mouse/Inst_Ps2Interface/delay_63clk_count[6]_i_1_n_0 |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/x[6]_i_1_n_0                                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/y[6]_i_1_n_0                                 |                                                             |                4 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[11][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[14][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[18][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[19][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[16][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[17][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[12][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[0][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[10][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[13][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[15][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[28][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[20][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[31][6]_i_1_n_0                 |                                                             |                3 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[21][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[29][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[30][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[2][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[36][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[25][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[39][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[40][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[3][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[38][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[41][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[42][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[34][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[43][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[32][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[22][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[24][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[26][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[33][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[37][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[35][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[23][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[1][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[27][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[62][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[45][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[58][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[61][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[63][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[6][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[44][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[48][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[7][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[8][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[49][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[55][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[50][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[46][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[52][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[47][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[53][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[54][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[57][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[59][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[4][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[60][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[5][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[51][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[56][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_x_if_y_is[9][6]_i_1_n_0                  |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[20][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[32][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[19][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[1][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[15][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[16][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[23][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[29][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[12][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is                                |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[18][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[24][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[0][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[22][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[17][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[11][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[25][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[26][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[27][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[14][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[28][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[13][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[10][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[2][6]_i_1_n_0                  |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[30][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[21][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[31][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[43][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[33][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[54][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[57][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[42][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[51][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[40][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[58][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[55][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[34][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[37][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[39][6]_i_1_n_0                 |                                                             |                2 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[41][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[53][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[46][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[38][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[47][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/dsp/new_y_if_x_is[35][6]_i_1_n_0                 |                                                             |                1 |             14 |
+|  clk_IBUF_BUFG                       | ballhandlr/whiteBall/E[0]                                   | sw_IBUF[15]                                                 |                5 |             16 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/xCount[7]_i_2__2_n_0                   | ballhandlr/whiteBall/yCount                                 |                3 |             16 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/xCount[7]_i_2__2_n_0                   | ballhandlr/whiteBall/xCount[7]_i_1__2_n_0                   |                3 |             16 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/xCount[7]_i_2__4_n_0                   | ballhandlr/blackBall/yCount                                 |                4 |             16 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/xCount[7]_i_2__4_n_0                   | ballhandlr/blackBall/xCount[7]_i_1__4_n_0                   |                3 |             16 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/xCount[7]_i_2__3_n_0                     | ballhandlr/StripeA/yCount                                   |                3 |             16 |
+|  collisionClk_BUFG                   | ballhandlr/whiteBall/ballANewXSpd_reg[7]_8[0]               |                                                             |                5 |             16 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/xCount[7]_i_2__1_n_0                     | ballhandlr/StripeB/yCount                                   |                3 |             16 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/xCount[7]_i_2__1_n_0                     | ballhandlr/StripeB/xCount[7]_i_1__1_n_0                     |                4 |             16 |
+|  collisionClk_BUFG                   | ballhandlr/whiteBall/ballANewXSpd_reg[7]_15[0]              |                                                             |                6 |             16 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/xCount[7]_i_2__3_n_0                     | ballhandlr/StripeA/xCount[7]_i_1__3_n_0                     |                4 |             16 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/x_inc_reg[0]                 |                                                             |                2 |             16 |
+|  clk_IBUF_BUFG                       | Master_Mouse/write_data                                     |                                                             |                2 |             16 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/xCount[7]_i_2_n_0                         | ballhandlr/SolidB/yCount                                    |                3 |             16 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/xCount[7]_i_2__0_n_0                      | ballhandlr/SolidA/xCount[7]_i_1__0_n_0                      |                2 |             16 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/xCount[7]_i_2__0_n_0                      | ballhandlr/SolidA/yCount                                    |                4 |             16 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/xCount[7]_i_2_n_0                         | ballhandlr/SolidB/xCount[7]_i_1_n_0                         |                2 |             16 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/y_inc_reg[0]                 |                                                             |                2 |             16 |
+|  collisionClk_BUFG                   | ballhandlr/blackBall/ballANewXSpd_reg[7]_6[0]               |                                                             |                6 |             16 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/load_rx_data                 |                                                             |                2 |             16 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/StripeA/clear                                    |                2 |             18 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/StripeB/clear                                    |                3 |             18 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/blackBall/clear                                  |                3 |             18 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/whiteBall/clear                                  |                3 |             18 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/SolidA/clear                                     |                3 |             18 |
+|  movementClk_BUFG                    |                                                             | ballhandlr/SolidB/clear                                     |                3 |             18 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/frame[9]_i_1_n_0             |                                                             |                2 |             20 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/xPos[7]_i_1__3_n_0                       |                                                             |                3 |             22 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/yPos[6]_i_1__2_n_0                     |                                                             |                5 |             22 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/delay_20us_count[10]_i_2_n_0 | Master_Mouse/Inst_Ps2Interface/delay_20us_count[10]_i_1_n_0 |                2 |             22 |
+|  clk_IBUF_BUFG                       | Master_Mouse/y_new_reg_n_0                                  |                                                             |                4 |             24 |
+|  mouse_x_rx_final/clocker_625khz/CLK | mouse_x_rx_final/Rx_Counter[4]_i_2_n_0                      |                                                             |                2 |             24 |
+|  mouse_y_rx_final/clocker_625khz/CLK | mouse_y_rx_final/Rx_Counter12_out                           |                                                             |                2 |             24 |
+|  mouse_y_rx_final/clocker_625khz/CLK | mouse_y_rx_final/Rx_Counter[4]_i_2__0_n_0                   |                                                             |                5 |             24 |
+|  mouse_y_rx_final/clocker_30hz/CLK   |                                                             |                                                             |                5 |             24 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/xPos[7]_i_1__1_n_0                       |                                                             |                6 |             24 |
+|  mouse_x_rx_final/clocker_625khz/CLK | mouse_x_rx_final/Rx_Counter12_out                           |                                                             |                3 |             24 |
+|  mouse_x_rx_final/clocker_30hz/CLK   |                                                             |                                                             |                2 |             24 |
+|  mouse_x_tx_final/clocker_625khz/CLK | mouse_x_tx_final/tx_data[11]_i_1__0_n_0                     |                                                             |                4 |             24 |
+|  mouse_y_tx_final/clocker_625khz/CLK | mouse_y_tx_final/tx_data[11]_i_1_n_0                        |                                                             |                3 |             24 |
+|  clk_IBUF_BUFG                       | Master_Mouse/x_new_reg_n_0                                  |                                                             |                5 |             24 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/xPos[7]_i_1_n_0                           |                                                             |                5 |             26 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/xPos[7]_i_1__0_n_0                        |                                                             |                6 |             26 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/xPos[7]_i_1__4_n_0                     |                                                             |                6 |             28 |
+|  clk_IBUF_BUFG                       | Master_Mouse/Inst_Ps2Interface/delay_100us_count[0]_i_2_n_0 | Master_Mouse/Inst_Ps2Interface/clear                        |                4 |             28 |
+|  movementClk_BUFG                    | ballhandlr/blackBall/yPos[6]_i_1__4_n_0                     |                                                             |                5 |             28 |
+|  clk_IBUF_BUFG                       | ballhandlr/StrBScore/E[0]                                   | sw_IBUF[15]                                                 |                6 |             30 |
+|  movementClk_BUFG                    | ballhandlr/whiteBall/xPos[7]_i_1__2_n_0                     |                                                             |                6 |             30 |
+|  clk_IBUF_BUFG                       | ballhandlr/BScore/E[0]                                      | sw_IBUF[15]                                                 |                6 |             30 |
+|  clk_IBUF_BUFG                       | ballhandlr/SolAScore/E[0]                                   |                                                             |               10 |             30 |
+|  clk_IBUF_BUFG                       | ballhandlr/SolBScore/E[0]                                   | sw_IBUF[15]                                                 |               10 |             30 |
+|  clk_IBUF_BUFG                       | ballhandlr/StrAScore/E[0]                                   |                                                             |                7 |             30 |
+|  movementClk_BUFG                    | ballhandlr/SolidB/yPos[6]_i_1_n_0                           |                                                             |                7 |             32 |
+|  CoinFlip_25Mhz/CLK                  |                                                             |                                                             |               11 |             32 |
+|  SLOW_CLOCK                          | intra_uart_module/transmit_intra/data_Tx[15]_i_1_n_0        |                                                             |                3 |             32 |
+|  clk_IBUF_BUFG                       | ballhandlr/WhiteSolAColl/E[0]                               |                                                             |                8 |             32 |
+|  clk_IBUF_BUFG                       | ballhandlr/BlackSolAColl/E[0]                               |                                                             |                8 |             32 |
+|  clk_IBUF_BUFG                       | ballhandlr/blackBall/E[0]                                   |                                                             |                8 |             32 |
+|  clk_IBUF_BUFG                       | ballhandlr/SolASolBColl/E[0]                                |                                                             |                7 |             32 |
+|  clk_IBUF_BUFG                       | ballhandlr/StrAStrBColl/E[0]                                |                                                             |                9 |             32 |
+|  collisionClk_BUFG                   | ballhandlr/SolidA/E[0]                                      |                                                             |               13 |             32 |
+|  movementClk_BUFG                    | ballhandlr/StripeA/yPos[6]_i_1__3_n_0                       |                                                             |                5 |             32 |
+|  placer/CLK                          |                                                             |                                                             |                5 |             34 |
+| ~clock_6p25Mhz_BUFG                  |                                                             | Coin_Page_Oled/frame_counter[16]_i_1_n_0                    |                5 |             34 |
+|  movementClk_BUFG                    | ballhandlr/SolidA/yPos[6]_i_1__0_n_0                        |                                                             |                6 |             36 |
+|  clk_IBUF_BUFG                       | ballhandlr/WhiteStrBColl/E[0]                               |                                                             |               13 |             36 |
+| ~clock_6p25Mhz_BUFG                  | Coin_Page_Oled/delay[0]_i_1_n_0                             |                                                             |                5 |             40 |
+|  movementClk_BUFG                    | ballhandlr/StripeB/yPos[6]_i_1__1_n_0                       |                                                             |                8 |             40 |
+|  clk_IBUF_BUFG                       |                                                             | Master_Mouse/reset_timeout_cnt_reg_n_0                      |                6 |             48 |
+|  collisionClk_BUFG                   | ballhandlr/blackBall/ballANewYSpd_reg[7]_3[0]               |                                                             |               18 |             48 |
+|  collisionClk_BUFG                   | ballhandlr/whiteBall/ballANewYSpd_reg[7]_12[0]              |                                                             |               18 |             48 |
+|  collisionClk_BUFG                   | ballhandlr/whiteBall/ballANewYSpd_reg[7]_8[0]               |                                                             |               17 |             48 |
+|  clk_IBUF_BUFG                       |                                                             | Master_Mouse/reset_periodic_check_cnt__0                    |                7 |             52 |
+|  clk_IBUF_BUFG                       | ballhandlr/whiteBall/is_done0                               |                                                             |                7 |             56 |
+|  SLOW_CLOCK                          |                                                             | intra_uart_module/transmit_intra/Tx_Counter[31]_i_1_n_0     |                8 |             62 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_x_rx_final/clocker_30hz/clear                         |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_x_rx_final/clocker_625khz/COUNT[0]_i_1__2_n_0         |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_y_rx_final/clocker_30hz/clear                         |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_y_rx_final/clocker_625khz/COUNT[0]_i_1__4_n_0         |                8 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/StripeB/ballANewYSpd_reg[7]_16[0]                |                                                             |               20 |             64 |
+| ~clock_6p25Mhz_BUFG                  | Coin_Page_Oled/state                                        |                                                             |                7 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | placer/COUNT[0]_i_1__11_n_0                                 |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | coll/COUNT[0]_i_1__10_n_0                                   |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | move/COUNT[0]_i_1__9_n_0                                    |                8 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/SolidA/ballANewYSpd_reg[7]_25[0]                 |                                                             |               23 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/SolidA/ballANewYSpd_reg[7]_19[0]                 |                                                             |               23 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/SolidB/ballANewYSpd_reg[7]_3[0]                  |                                                             |               23 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/StripeA/ballANewYSpd_reg[7]_6[0]                 |                                                             |               23 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/StripeA/E[0]                                     |                                                             |               25 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/StripeB/E[0]                                     |                                                             |               21 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/StripeB/ballANewYSpd_reg[7]_24[0]                |                                                             |               23 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_x_tx_final/clocker_625khz/clear                       |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | intra_uart_module/transmit_intra/UART_6p25Mhz_tx/clear      |                8 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/blackBall/ballANewYSpd_reg[7]_12[0]              |                                                             |               25 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | mouse_y_tx_final/clocker_625khz/clear                       |                8 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/blackBall/ballANewYSpd_reg[7]_23[0]              |                                                             |               23 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | CoinFlip_6p25Mhz/COUNT[0]_i_1__7_n_0                        |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | CoinFlip_1Hz/COUNT[0]_i_1__8_n_0                            |                8 |             64 |
+|  clk_IBUF_BUFG                       |                                                             | CoinFlip_25Mhz/clear                                        |                8 |             64 |
+|  collisionClk_BUFG                   | ballhandlr/BlackStrBColl/ballANewYSpd0                      |                                                             |               23 |             64 |
+|  clock_1Hz_BUFG                      |                                                             | state_1_counter/count[31]_i_1_n_0                           |                8 |             64 |
+|  clock_1Hz_BUFG                      |                                                             | state_2_counter/count[31]_i_1__0_n_0                        |                8 |             64 |
+|  clock_1Hz_BUFG                      |                                                             | state_3_counter/count[31]_i_1__1_n_0                        |                6 |             64 |
+| ~clock_6p25Mhz_BUFG                  |                                                             | Coin_Page_Oled/spi_word[39]_i_1_n_0                         |               18 |             90 |
+|  collisionClk_BUFG                   |                                                             |                                                             |              109 |            326 |
+|  clk_IBUF_BUFG                       |                                                             |                                                             |               96 |            400 |
+|  movementClk_BUFG                    |                                                             |                                                             |              132 |            562 |
++--------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+
+
